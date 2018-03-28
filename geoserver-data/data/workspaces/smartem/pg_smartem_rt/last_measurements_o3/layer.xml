@@ -1,0 +1,15 @@
+<layer>
+  <name>last_measurements_o3</name>
+  <id>LayerInfoImpl--7a47d44d:1550c8d8552:-7b94</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--7a47d44d:1550c8d8552:-7d35</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--7a47d44d:1550c8d8552:-7b95</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

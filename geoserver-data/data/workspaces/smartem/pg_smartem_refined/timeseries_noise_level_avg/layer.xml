@@ -1,0 +1,15 @@
+<layer>
+  <name>timeseries_noise_level_avg</name>
+  <id>LayerInfoImpl--1e5a14e0:155f3646778:-7146</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-51cc3c4:155e00d5685:-7b2a</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--1e5a14e0:155f3646778:-7147</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

@@ -1,0 +1,15 @@
+<layer>
+  <name>last_measurements_pm10</name>
+  <id>LayerInfoImpl--2cab6128:15f7d5d8e51:-7466</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--2cab6128:15f7d5d8e51:-7482</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--2cab6128:15f7d5d8e51:-7467</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

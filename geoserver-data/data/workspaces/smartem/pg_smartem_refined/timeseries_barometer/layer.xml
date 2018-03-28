@@ -1,0 +1,15 @@
+<layer>
+  <name>timeseries_barometer</name>
+  <id>LayerInfoImpl--1e5a14e0:155f3646778:-714e</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--7a47d44d:1550c8d8552:-7d36</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--1e5a14e0:155f3646778:-714f</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

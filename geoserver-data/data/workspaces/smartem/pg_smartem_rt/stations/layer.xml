@@ -1,0 +1,26 @@
+<layer>
+  <name>stations</name>
+  <id>LayerInfoImpl--7a47d44d:1550c8d8552:-7ff7</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--7a47d44d:1550c8d8552:-7ffd</id>
+  </defaultStyle>
+  <styles class="linked-hash-set">
+    <style>
+      <id>StyleInfoImpl--7a47d44d:1550c8d8552:-7ffd</id>
+    </style>
+    <style>
+      <id>StyleInfoImpl--5d5af3ef:15f0487329e:-23a8</id>
+    </style>
+    <style>
+      <id>StyleInfoImpl--5d5af3ef:15f0487329e:-23a7</id>
+    </style>
+  </styles>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--7a47d44d:1550c8d8552:-7ff8</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

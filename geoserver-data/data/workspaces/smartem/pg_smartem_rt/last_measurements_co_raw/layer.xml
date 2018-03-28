@@ -1,0 +1,15 @@
+<layer>
+  <name>last_measurements_co_raw</name>
+  <id>LayerInfoImpl--7a47d44d:1550c8d8552:-7d2d</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--7a47d44d:1550c8d8552:-7c10</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--7a47d44d:1550c8d8552:-7d2e</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

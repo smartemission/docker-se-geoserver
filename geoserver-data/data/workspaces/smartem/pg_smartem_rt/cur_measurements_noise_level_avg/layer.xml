@@ -1,0 +1,15 @@
+<layer>
+  <name>cur_measurements_noise_level_avg</name>
+  <id>LayerInfoImpl--75eec011:161296484e8:161a</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-51cc3c4:155e00d5685:-7b2a</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--75eec011:161296484e8:1619</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

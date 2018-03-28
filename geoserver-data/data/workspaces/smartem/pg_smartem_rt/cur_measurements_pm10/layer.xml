@@ -1,0 +1,15 @@
+<layer>
+  <name>cur_measurements_pm10</name>
+  <id>LayerInfoImpl--75eec011:161296484e8:1611</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--2cab6128:15f7d5d8e51:-7482</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--75eec011:161296484e8:1610</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

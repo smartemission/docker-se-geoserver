@@ -1,0 +1,15 @@
+<layer>
+  <name>last_measurements_noise_level_avg</name>
+  <id>LayerInfoImpl-51cc3c4:155e00d5685:-7b26</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl-51cc3c4:155e00d5685:-7b2a</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl-51cc3c4:155e00d5685:-7b27</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>

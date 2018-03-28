@@ -1,0 +1,15 @@
+<layer>
+  <name>timeseries_stations</name>
+  <id>LayerInfoImpl--1e5a14e0:155f92fdb69:-30c1</id>
+  <type>VECTOR</type>
+  <defaultStyle>
+    <id>StyleInfoImpl--570ae188:124761b8d78:-7fde</id>
+  </defaultStyle>
+  <resource class="featureType">
+    <id>FeatureTypeInfoImpl--1e5a14e0:155f92fdb69:-30c2</id>
+  </resource>
+  <attribution>
+    <logoWidth>0</logoWidth>
+    <logoHeight>0</logoHeight>
+  </attribution>
+</layer>
