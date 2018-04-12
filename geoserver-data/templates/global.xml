@@ -1,0 +1,58 @@
+<global>
+  <settings>
+    <id>SettingsInfoImpl-68f6c583:154ca420c47:-8000</id>
+    <contact>
+      <address>Barchman Wuytierslaan 10</address>
+      <addressCity>Amersfoort</addressCity>
+      <addressCountry>The Netherlands</addressCountry>
+      <addressPostalCode>3818LH</addressPostalCode>
+      <addressState>Utrecht</addressState>
+      <addressType>Work</addressType>
+      <contactEmail>info@geonovum.nl</contactEmail>
+      <contactOrganization>Geonovum</contactOrganization>
+      <contactPerson>Just van den Broecke</contactPerson>
+      <contactPosition>Developer/Maintainer</contactPosition>
+    </contact>
+    <charset>UTF-8</charset>
+    <numDecimals>8</numDecimals>
+    <onlineResource>http://geoserver.org</onlineResource>
+    <proxyBaseUrl>${PROXY_BASE_URL}</proxyBaseUrl>
+    <verbose>false</verbose>
+    <verboseExceptions>false</verboseExceptions>
+    <metadata>
+      <map>
+        <entry>
+          <string>quietOnNotFound</string>
+          <boolean>false</boolean>
+        </entry>
+      </map>
+    </metadata>
+    <localWorkspaceIncludesPrefix>false</localWorkspaceIncludesPrefix>
+  </settings>
+  <jai>
+    <allowInterpolation>false</allowInterpolation>
+    <recycling>false</recycling>
+    <tilePriority>5</tilePriority>
+    <tileThreads>7</tileThreads>
+    <memoryCapacity>0.5</memoryCapacity>
+    <memoryThreshold>0.75</memoryThreshold>
+    <imageIOCache>false</imageIOCache>
+    <pngAcceleration>true</pngAcceleration>
+    <jpegAcceleration>true</jpegAcceleration>
+    <allowNativeMosaic>false</allowNativeMosaic>
+    <allowNativeWarp>false</allowNativeWarp>
+  </jai>
+  <coverageAccess>
+    <maxPoolSize>10</maxPoolSize>
+    <corePoolSize>5</corePoolSize>
+    <keepAliveTime>30000</keepAliveTime>
+    <queueType>UNBOUNDED</queueType>
+    <imageIOCacheThreshold>10240</imageIOCacheThreshold>
+  </coverageAccess>
+  <updateSequence>586</updateSequence>
+  <featureTypeCacheSize>0</featureTypeCacheSize>
+  <globalServices>true</globalServices>
+  <xmlPostRequestLogBufferSize>1024</xmlPostRequestLogBufferSize>
+  <xmlExternalEntitiesEnabled>false</xmlExternalEntitiesEnabled>
+  <webUIMode>DEFAULT</webUIMode>
+</global>
