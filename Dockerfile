@@ -1,4 +1,4 @@
-FROM kartoza/geoserver:2.9.4
+FROM kartoza/geoserver:2.12.1
 MAINTAINER Gerwin Hulsteijn
 
 ENV TZ Europe/Amsterdam
