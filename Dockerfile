@@ -1,5 +1,11 @@
 FROM kartoza/geoserver:2.12.1
-MAINTAINER="Gerwin Hulsteijn, Just van den Broecke"
+LABEL maintainer="Gerwin Hulsteijn, Just van den Broecke"
+
+RUN \
+  apt-get update \
+  && apt-get -y install gettext-base \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
 ENV TZ Europe/Amsterdam
 
@@ -15,12 +21,6 @@ ENV GEOSERVER_OPTS "-Djava.awt.headless=true -server -Xrs -XX:PerfDataSamplingIn
  -XX:+CMSClassUnloadingEnabled"
 
 ENV JAVA_OPTS "$JAVA_OPTS $GEOSERVER_OPTS"
-
-RUN \
-  apt-get update \
-  && apt-get -y install gettext-base \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
 
 COPY geoserver-data/templates /opt/geoserver/templates
 COPY geoserver-data/data /opt/geoserver/data_dir
