@@ -3,6 +3,18 @@ MAINTAINER Gerwin Hulsteijn
 
 ENV TZ Europe/Amsterdam
 
+# OVERRULE, see https://github.com/kartoza/docker-geoserver/blob/master/Dockerfile
+#ENV GEOSERVER_OPTS "-Djava.awt.headless=true -server -Xms2G -Xmx4G -Xrs -XX:PerfDataSamplingInterval=500 \
+# -Dorg.geotools.referencing.forceXY=true -XX:SoftRefLRUPolicyMSPerMB=36000 -XX:+UseParallelGC -XX:NewRatio=2 \
+# -XX:+CMSClassUnloadingEnabled"
+
+ENV GEOSERVER_OPTS "-Djava.awt.headless=true -server -Xrs -XX:PerfDataSamplingInterval=500 \
+ -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap \
+ -Dorg.geotools.referencing.forceXY=true -XX:SoftRefLRUPolicyMSPerMB=36000 -XX:NewRatio=2 \
+ -XX:+CMSClassUnloadingEnabled"
+
+ENV JAVA_OPTS "$JAVA_OPTS $GEOSERVER_OPTS"
+
 RUN \
   apt-get update \
   && apt-get -y install gettext-base \
