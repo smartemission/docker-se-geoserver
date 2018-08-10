@@ -43,6 +43,21 @@
   <projectionPolicy>FORCE_DECLARED</projectionPolicy>
   <enabled>true</enabled>
   <metadata>
+    <entry key="elevation">
+      <dimensionInfo>
+        <enabled>false</enabled>
+      </dimensionInfo>
+    </entry>
+    <entry key="time">
+      <dimensionInfo>
+        <enabled>true</enabled>
+        <attribute>time</attribute>
+        <presentation>DISCRETE_INTERVAL</presentation>
+        <resolution>3600000</resolution>
+        <units>ISO8601</units>
+        <defaultValue/>
+      </dimensionInfo>
+    </entry>
     <entry key="cachingEnabled">false</entry>
   </metadata>
   <store class="dataStore">

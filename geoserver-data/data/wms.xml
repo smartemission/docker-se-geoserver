@@ -52,7 +52,7 @@
   <getFeatureInfoMimeTypeCheckingEnabled>false</getFeatureInfoMimeTypeCheckingEnabled>
   <getMapMimeTypeCheckingEnabled>false</getMapMimeTypeCheckingEnabled>
   <maxBuffer>25</maxBuffer>
-  <maxRequestMemory>65536</maxRequestMemory>
-  <maxRenderingTime>60</maxRenderingTime>
+  <maxRequestMemory>131072</maxRequestMemory>
+  <maxRenderingTime>180</maxRenderingTime>
   <maxRenderingErrors>1000</maxRenderingErrors>
 </wms>
