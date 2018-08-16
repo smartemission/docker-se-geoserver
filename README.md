@@ -32,6 +32,16 @@ overlayed with
 a complete configuration (GeoServer data dir). Further vars from that config are overruled/set via its 
 Container Environment at runtime via the [entry.sh](entry.sh) script.
 
+### WMS Capabilities
+
+As many Layers have a Dimension as Time enabled, the Dimension range (start-end time)
+is generated for each Layer and put in the Capabilities document. This results in queries on the Postgres database
+that take huge amount of time (about 1 minute per million records), even with the `time` column indexed.
+Basically a rowscan is done for all 20-30 Layers...In some cases GeoServer crashes. To overcome this
+a semi-static Capabilities document is generated from a template file [wms-capabilities.xml](wms-capabilities/wms-capabilities.xml).
+This is handled via a custom Servlet Filter: the [WmsCapabilitiesFilter.java](wms-capabilities/src/nl/pdok/filter/WmsCapabilitiesFilter.java)
+that is added to the Tomcat [web.xml](wms-capabilities/web.xml) config file.  
+
 ## Dependencies
 
 * PostGIS backend

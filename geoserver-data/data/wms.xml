@@ -43,6 +43,12 @@
     <entry key="scalehintMapunitsPixel">false</entry>
     <entry key="framesDelay">1000</entry>
   </metadata>
+  <srs>
+    <string>4326</string>
+    <string>4258</string>
+    <string>28992</string>
+  </srs>
+  <bboxForEachCRS>true</bboxForEachCRS>
   <watermark>
     <enabled>false</enabled>
     <position>BOT_RIGHT</position>
@@ -51,6 +57,8 @@
   <interpolation>Nearest</interpolation>
   <getFeatureInfoMimeTypeCheckingEnabled>false</getFeatureInfoMimeTypeCheckingEnabled>
   <getMapMimeTypeCheckingEnabled>false</getMapMimeTypeCheckingEnabled>
+  <dynamicStylingDisabled>false</dynamicStylingDisabled>
+  <featuresReprojectionDisabled>false</featuresReprojectionDisabled>
   <maxBuffer>25</maxBuffer>
   <maxRequestMemory>131072</maxRequestMemory>
   <maxRenderingTime>180</maxRenderingTime>

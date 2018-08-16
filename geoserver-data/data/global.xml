@@ -2,16 +2,15 @@
   <settings>
     <id>SettingsInfoImpl-68f6c583:154ca420c47:-8000</id>
     <contact>
-      <address>Barchman Wuytierslaan 10</address>
-      <addressCity>Amersfoort</addressCity>
+      <address>P.O. box 9046</address>
+      <addressCity>Apeldoorn</addressCity>
       <addressCountry>The Netherlands</addressCountry>
-      <addressPostalCode>3818LH</addressPostalCode>
-      <addressState>Utrecht</addressState>
+      <addressPostalCode>7300GH</addressPostalCode>
+      <addressState>Gelderland</addressState>
       <addressType>Work</addressType>
-      <contactEmail>info@geonovum.nl</contactEmail>
-      <contactOrganization>Geonovum</contactOrganization>
-      <contactPerson>Just van den Broecke</contactPerson>
-      <contactPosition>Developer/Maintainer</contactPosition>
+      <contactEmail>beheerPDOK@kadaster.nl</contactEmail>
+      <contactOrganization>Het Kadaster</contactOrganization>
+      <contactPerson>PDOK Beheer</contactPerson>
     </contact>
     <charset>UTF-8</charset>
     <numDecimals>8</numDecimals>

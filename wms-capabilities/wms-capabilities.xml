@@ -1,0 +1,1328 @@
+<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities version="1.3.0" updateSequence="588" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://data.smartemission.nl:80/geoserver/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
+  <Service>
+    <Name>WMS</Name>
+    <Title>Smart Emission Web Map Service</Title>
+    <Abstract>A compliant implementation of WMS plus most of the SLD extension (dynamic styling). Can also generate PDF, SVG, KML, GeoRSS</Abstract>
+    <KeywordList>
+      <Keyword>WFS</Keyword>
+      <Keyword>WMS</Keyword>
+      <Keyword>GEOSERVER</Keyword>
+    </KeywordList>
+    <OnlineResource xlink:type="simple" xlink:href="http://geonovum.nl"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson>PDOK Beheer</ContactPerson>
+        <ContactOrganization>Het Kadaster</ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition/>
+      <ContactAddress>
+        <AddressType>Work</AddressType>
+        <Address>P.O. box 9046</Address>
+        <City>Apeldoorn</City>
+        <StateOrProvince>Gelderland</StateOrProvince>
+        <PostCode>7300GH</PostCode>
+        <Country>The Netherlands</Country>
+      </ContactAddress>
+      <ContactVoiceTelephone/>
+      <ContactFacsimileTelephone/>
+      <ContactElectronicMailAddress>beheerPDOK@kadaster.nl</ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees>NONE</Fees>
+    <AccessConstraints>NONE</AccessConstraints>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?SERVICE=WMS&amp;"/>
+            </Get>
+            <Post>
+              <OnlineResource xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?SERVICE=WMS&amp;"/>
+            </Post>
+          </HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/png</Format>
+        <Format>application/atom+xml</Format>
+        <Format>application/json;type=utfgrid</Format>
+        <Format>application/pdf</Format>
+        <Format>application/rss+xml</Format>
+        <Format>application/vnd.google-earth.kml+xml</Format>
+        <Format>application/vnd.google-earth.kml+xml;mode=networklink</Format>
+        <Format>application/vnd.google-earth.kmz</Format>
+        <Format>image/geotiff</Format>
+        <Format>image/geotiff8</Format>
+        <Format>image/gif</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/png; mode=8bit</Format>
+        <Format>image/svg+xml</Format>
+        <Format>image/tiff</Format>
+        <Format>image/tiff8</Format>
+        <Format>image/vnd.jpeg-png</Format>
+        <Format>text/html; subtype=openlayers</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>text/plain</Format>
+        <Format>application/vnd.ogc.gml</Format>
+        <Format>text/xml</Format>
+        <Format>application/vnd.ogc.gml/3.1.1</Format>
+        <Format>text/xml; subtype=gml/3.1.1</Format>
+        <Format>text/html</Format>
+        <Format>application/json</Format>
+        <DCPType>
+          <HTTP>
+            <Get>
+              <OnlineResource xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?SERVICE=WMS&amp;"/>
+            </Get>
+          </HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+    </Request>
+    <Exception>
+      <Format>XML</Format>
+      <Format>INIMAGE</Format>
+      <Format>BLANK</Format>
+      <Format>JSON</Format>
+    </Exception>
+    <Layer>
+      <Title>Smart Emission Web Map Service</Title>
+      <Abstract>A compliant implementation of WMS plus most of the SLD extension (dynamic styling). Can also generate PDF, SVG, KML, GeoRSS</Abstract>
+      <!--Limited list of EPSG projections:-->
+      <CRS>EPSG:4326</CRS>
+      <CRS>EPSG:4258</CRS>
+      <CRS>EPSG:28992</CRS>
+      <CRS>CRS:84</CRS>
+      <EX_GeographicBoundingBox>
+        <westBoundLongitude>-2.048575</westBoundLongitude>
+        <eastBoundLongitude>16.360798</eastBoundLongitude>
+        <southBoundLatitude>-2.048575</southBoundLatitude>
+        <northBoundLatitude>52.39608</northBoundLatitude>
+      </EX_GeographicBoundingBox>
+      <BoundingBox CRS="CRS:84" minx="-2.048575" miny="-2.048575" maxx="16.360798" maxy="52.39608"/>
+      <BoundingBox CRS="EPSG:4326" minx="-2.048575" miny="-2.048575" maxx="52.39608" maxy="16.360798"/>
+      <BoundingBox CRS="EPSG:4258" minx="-2.048575" miny="-2.048575" maxx="52.39608" maxy="16.360798"/>
+      <BoundingBox CRS="EPSG:28992" minx="-888431.7630016899" miny="-6031978.002640698" maxx="1695362.526603589" maxy="546370.4556372489"/>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:cur_measurements_barometer</Name>
+        <Title>cur_measurements_barometer</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_cur_measurements_barometer</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>4.351508</westBoundLongitude>
+          <eastBoundLongitude>16.360536</eastBoundLongitude>
+          <southBoundLatitude>48.201248</southBoundLatitude>
+          <northBoundLatitude>52.119921</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="4.351508" miny="48.201248" maxx="16.360536" maxy="52.119921"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.201248" miny="4.351508" maxx="52.119921" maxy="16.360536"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.20124804205833" miny="4.351508" maxx="52.11992103909314" maxy="16.360536"/>
+        <BoundingBox CRS="EPSG:28992" minx="77929.86510713768" miny="23526.087978487718" maxx="969665.2679692983" maxy="515920.8247304841"/>
+        <Style>
+          <Name>meteo</Name>
+          <Title>SmarteEmission Meteo Measurements</Title>
+          <Abstract>SmarteEmission Meteo Measurements style</Abstract>
+          <LegendURL width="22" height="60">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Acur_measurements_barometer"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:cur_measurements_co</Name>
+        <Title>cur_measurements_co</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_cur_measurements_co</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.0407</westBoundLongitude>
+          <eastBoundLongitude>5.867475</eastBoundLongitude>
+          <southBoundLatitude>51.472761</southBoundLatitude>
+          <northBoundLatitude>52.105056</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.0407" miny="51.472761" maxx="5.867475" maxy="52.105056"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.472761" miny="5.0407" maxx="52.105056" maxy="5.867475"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.47276103972503" miny="5.0407" maxx="52.10505603910824" maxy="5.867475"/>
+        <BoundingBox CRS="EPSG:28992" minx="130925.80282681201" miny="387080.3481670952" maxx="188368.38105679327" maxy="457533.01013590203"/>
+        <Style>
+          <Name>smartem:meas_co_plain</Name>
+          <Title>Smart Emission measurements_co</Title>
+          <Abstract>Smart Emission measurements_co style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Acur_measurements_co"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:cur_measurements_co2</Name>
+        <Title>cur_measurements_co2</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_cur_measurements_co2</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>4.351491</westBoundLongitude>
+          <eastBoundLongitude>16.360533</eastBoundLongitude>
+          <southBoundLatitude>48.201243</southBoundLatitude>
+          <northBoundLatitude>52.11993</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="4.351491" miny="48.201243" maxx="16.360533" maxy="52.11993"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.201243" miny="4.351491" maxx="52.11993" maxy="16.360533"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.20124304205834" miny="4.351490999999999" maxx="52.11993003909312" maxy="16.360533"/>
+        <BoundingBox CRS="EPSG:28992" minx="77928.59237668992" miny="23525.517284610833" maxx="969665.1283452443" maxy="515921.7869531667"/>
+        <Style>
+          <Name>smartem:meas_co2_color_range</Name>
+          <Title>Smart Emission measurements_co</Title>
+          <Abstract>Smart Emission measurements_co style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Acur_measurements_co2"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:cur_measurements_humidity</Name>
+        <Title>cur_measurements_humidity</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_cur_measurements_humidity</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>4.351486</westBoundLongitude>
+          <eastBoundLongitude>16.360535</eastBoundLongitude>
+          <southBoundLatitude>48.201243</southBoundLatitude>
+          <northBoundLatitude>52.119923</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="4.351486" miny="48.201243" maxx="16.360535" maxy="52.119923"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.201243" miny="4.351486" maxx="52.119923" maxy="16.360535"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.20124304205834" miny="4.3514859999999995" maxx="52.119923039093145" maxy="16.360535000000002"/>
+        <BoundingBox CRS="EPSG:28992" minx="77928.22031797373" miny="23525.513588535774" maxx="969665.27611911" maxy="515921.03510304895"/>
+        <Style>
+          <Name>meteo</Name>
+          <Title>SmarteEmission Meteo Measurements</Title>
+          <Abstract>SmarteEmission Meteo Measurements style</Abstract>
+          <LegendURL width="22" height="60">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Acur_measurements_humidity"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:cur_measurements_no2</Name>
+        <Title>cur_measurements_no2</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_cur_measurements_no2</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.0407</westBoundLongitude>
+          <eastBoundLongitude>5.867475</eastBoundLongitude>
+          <southBoundLatitude>51.472761</southBoundLatitude>
+          <northBoundLatitude>52.105056</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.0407" miny="51.472761" maxx="5.867475" maxy="52.105056"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.472761" miny="5.0407" maxx="52.105056" maxy="5.867475"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.47276103972503" miny="5.0407" maxx="52.10505603910824" maxy="5.867475"/>
+        <BoundingBox CRS="EPSG:28992" minx="130925.80282681201" miny="387080.3481670952" maxx="188368.38105679327" maxy="457533.01013590203"/>
+        <Style>
+          <Name>smartem:meas_no2_color_range</Name>
+          <Title>Smart Emission measurements NO2</Title>
+          <Abstract>Smart Emission measurements_no2 style</Abstract>
+          <LegendURL width="176" height="360">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Acur_measurements_no2"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:cur_measurements_noise_level_avg</Name>
+        <Title>cur_measurements_noise_level_avg</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_cur_measurements_noise_level_avg</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>4.3515</westBoundLongitude>
+          <eastBoundLongitude>16.360538</eastBoundLongitude>
+          <southBoundLatitude>48.201245</southBoundLatitude>
+          <northBoundLatitude>52.119933</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="4.3515" miny="48.201245" maxx="16.360538" maxy="52.119933"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.201245" miny="4.3515" maxx="52.119933" maxy="16.360538"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.20124504205833" miny="4.3515" maxx="52.11993303909312" maxy="16.360537999999995"/>
+        <BoundingBox CRS="EPSG:28992" minx="77929.26517472815" miny="23525.747940505564" maxx="969665.4649652025" maxy="515922.16987861326"/>
+        <Style>
+          <Name>smartem:meas_noise_level_range</Name>
+          <Title>Smart Emission measurements Audio/Noise Level</Title>
+          <Abstract>Smart Emission v_last_measurements_audio_max style</Abstract>
+          <LegendURL width="211" height="120">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Acur_measurements_noise_level_avg"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:cur_measurements_o3</Name>
+        <Title>cur_measurements_o3</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_cur_measurements_o3</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.0407</westBoundLongitude>
+          <eastBoundLongitude>5.867475</eastBoundLongitude>
+          <southBoundLatitude>51.472761</southBoundLatitude>
+          <northBoundLatitude>52.105056</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.0407" miny="51.472761" maxx="5.867475" maxy="52.105056"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.472761" miny="5.0407" maxx="52.105056" maxy="5.867475"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.47276103972503" miny="5.0407" maxx="52.10505603910824" maxy="5.867475"/>
+        <BoundingBox CRS="EPSG:28992" minx="130925.80282681201" miny="387080.3481670952" maxx="188368.38105679327" maxy="457533.01013590203"/>
+        <Style>
+          <Name>smartem:meas_o3_color_range</Name>
+          <Title>Smart Emission measurements O3</Title>
+          <Abstract>Smart Emission measurements_o3 style</Abstract>
+          <LegendURL width="176" height="380">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Acur_measurements_o3"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:cur_measurements_pm10</Name>
+        <Title>cur_measurements_pm10</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_cur_measurements_pm10</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>4.351498</westBoundLongitude>
+          <eastBoundLongitude>5.409301</eastBoundLongitude>
+          <southBoundLatitude>51.41819</southBoundLatitude>
+          <northBoundLatitude>52.119931</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="4.351498" miny="51.41819" maxx="5.409301" maxy="52.119931"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.41819" miny="4.351498" maxx="52.119931" maxy="5.409301"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.418190039775894" miny="4.351498" maxx="52.11993103909312" maxy="5.409301000000001"/>
+        <BoundingBox CRS="EPSG:28992" minx="82956.68843224524" miny="381007.356697121" maxx="156537.31437153876" maxy="459585.0551862768"/>
+        <Style>
+          <Name>smartem:meas_pm10_color_range</Name>
+          <Title>Smart Emission measurements PM10</Title>
+          <Abstract>Smart Emission measurements_pm10 style</Abstract>
+          <LegendURL width="176" height="360">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Acur_measurements_pm10"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:cur_measurements_pm25</Name>
+        <Title>cur_measurements_pm25</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_cur_measurements_pm25</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>4.351513</westBoundLongitude>
+          <eastBoundLongitude>5.409258</eastBoundLongitude>
+          <southBoundLatitude>51.418261</southBoundLatitude>
+          <northBoundLatitude>52.119913</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="4.351513" miny="51.418261" maxx="5.409258" maxy="52.119913"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.418261" miny="4.351513" maxx="52.119913" maxy="5.409258"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.41826103977582" miny="4.351513000000001" maxx="52.11991303909314" maxy="5.409258"/>
+        <BoundingBox CRS="EPSG:28992" minx="82957.84395260873" miny="381015.25460128544" maxx="156534.32082298328" maxy="459583.0379949118"/>
+        <Style>
+          <Name>smartem:meas_pm25_color_range</Name>
+          <Title>Smart Emission measurements PM2.5</Title>
+          <Abstract>Smart Emission measurements_pm2.5 style</Abstract>
+          <LegendURL width="176" height="340">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Acur_measurements_pm25"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:cur_measurements_temperature</Name>
+        <Title>cur_measurements_temperature</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_cur_measurements_temperature</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>4.351491</westBoundLongitude>
+          <eastBoundLongitude>5.870166</eastBoundLongitude>
+          <southBoundLatitude>51.418173</southBoundLatitude>
+          <northBoundLatitude>52.11993</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="4.351491" miny="51.418173" maxx="5.870166" maxy="52.11993"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.418173" miny="4.351491" maxx="52.11993" maxy="5.870166"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.4181730397759" miny="4.351490999999999" maxx="52.11993003909313" maxy="5.870166"/>
+        <BoundingBox CRS="EPSG:28992" minx="82956.17467754983" miny="381005.48346324667" maxx="188595.5879862097" maxy="459584.95077536936"/>
+        <Style>
+          <Name>meteo</Name>
+          <Title>SmarteEmission Meteo Measurements</Title>
+          <Abstract>SmarteEmission Meteo Measurements style</Abstract>
+          <LegendURL width="22" height="60">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Acur_measurements_temperature"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:last_measurements_barometer</Name>
+        <Title>last_measurements_barometer</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_last_measurements_barometer</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.671541</westBoundLongitude>
+          <eastBoundLongitude>5.87668</eastBoundLongitude>
+          <southBoundLatitude>51.47241</southBoundLatitude>
+          <northBoundLatitude>51.868121</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.671541" miny="51.47241" maxx="5.87668" maxy="51.868121"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.47241" miny="5.671541" maxx="51.868121" maxy="5.87668"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.47241003972536" miny="5.6715409999999995" maxx="51.86812103934525" maxy="5.87668"/>
+        <BoundingBox CRS="EPSG:28992" minx="174583.47193526162" miny="387077.73197407776" maxx="189008.18007126046" maxy="431176.86042215285"/>
+        <Style>
+          <Name>meteo</Name>
+          <Title>SmarteEmission Meteo Measurements</Title>
+          <Abstract>SmarteEmission Meteo Measurements style</Abstract>
+          <LegendURL width="22" height="60">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Alast_measurements_barometer"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:last_measurements_co</Name>
+        <Title>last_measurements_co</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_last_measurements_co</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.371826</westBoundLongitude>
+          <eastBoundLongitude>16.360551</eastBoundLongitude>
+          <southBoundLatitude>48.201038</southBoundLatitude>
+          <northBoundLatitude>51.850155</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.371826" miny="48.201038" maxx="16.360551" maxy="51.850155"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.201038" miny="5.371826" maxx="51.850155" maxy="16.360551"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.20103804205842" miny="5.371825999999999" maxx="51.85015503936293" maxy="16.360551000000005"/>
+        <BoundingBox CRS="EPSG:28992" minx="153856.65635214405" miny="23037.12506476656" maxx="969669.8218188768" maxy="486147.0290918066"/>
+        <Style>
+          <Name>smartem:meas_co_plain</Name>
+          <Title>Smart Emission measurements_co</Title>
+          <Abstract>Smart Emission measurements_co style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Alast_measurements_co"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:last_measurements_co2</Name>
+        <Title>last_measurements_co2</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_last_measurements_co2</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.67196</westBoundLongitude>
+          <eastBoundLongitude>5.876663</eastBoundLongitude>
+          <southBoundLatitude>51.472498</southBoundLatitude>
+          <northBoundLatitude>51.868101</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.67196" miny="51.472498" maxx="5.876663" maxy="51.868101"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.472498" miny="5.67196" maxx="51.868101" maxy="5.876663"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.47249803972528" miny="5.671960000000001" maxx="51.86810103934527" maxy="5.876663000000001"/>
+        <BoundingBox CRS="EPSG:28992" minx="174612.33867722208" miny="387087.63574633264" maxx="189006.93319074437" maxy="431174.6274590249"/>
+        <Style>
+          <Name>smartem:meas_co2_color_range</Name>
+          <Title>Smart Emission measurements_co</Title>
+          <Abstract>Smart Emission measurements_co style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Alast_measurements_co2"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:last_measurements_co_raw</Name>
+        <Title>last_measurements_co_raw</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_last_measurements_co_raw</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.671913</westBoundLongitude>
+          <eastBoundLongitude>5.876663</eastBoundLongitude>
+          <southBoundLatitude>51.472471</southBoundLatitude>
+          <northBoundLatitude>51.868108</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.671913" miny="51.472471" maxx="5.876663" maxy="51.868108"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.472471" miny="5.671913" maxx="51.868108" maxy="5.876663"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.472471039725285" miny="5.671912999999999" maxx="51.868108039345266" maxy="5.876663000000001"/>
+        <BoundingBox CRS="EPSG:28992" minx="174609.0985667345" miny="387084.61921334994" maxx="189006.95336743345" maxy="431175.4062359942"/>
+        <Style>
+          <Name>smartem:meas_kohm_raw</Name>
+          <Title>Smart Emission Raw Measurements</Title>
+          <Abstract>Smart Emission Raw Measurements Style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Alast_measurements_co_raw"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:last_measurements_humidity</Name>
+        <Title>last_measurements_humidity</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_last_measurements_humidity</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.671541</westBoundLongitude>
+          <eastBoundLongitude>5.87668</eastBoundLongitude>
+          <southBoundLatitude>51.47241</southBoundLatitude>
+          <northBoundLatitude>51.868121</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.671541" miny="51.47241" maxx="5.87668" maxy="51.868121"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.47241" miny="5.671541" maxx="51.868121" maxy="5.87668"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.47241003972536" miny="5.6715409999999995" maxx="51.86812103934525" maxy="5.87668"/>
+        <BoundingBox CRS="EPSG:28992" minx="174583.47193526162" miny="387077.73197407776" maxx="189008.18007126046" maxy="431176.86042215285"/>
+        <Style>
+          <Name>meteo</Name>
+          <Title>SmarteEmission Meteo Measurements</Title>
+          <Abstract>SmarteEmission Meteo Measurements style</Abstract>
+          <LegendURL width="22" height="60">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Alast_measurements_humidity"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:last_measurements_no2</Name>
+        <Title>last_measurements_no2</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_last_measurements_no2</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.371821</westBoundLongitude>
+          <eastBoundLongitude>16.360728</eastBoundLongitude>
+          <southBoundLatitude>48.201046</southBoundLatitude>
+          <northBoundLatitude>51.85016</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.371821" miny="48.201046" maxx="16.360728" maxy="51.85016"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.201046" miny="5.371821" maxx="51.85016" maxy="16.360728"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.20104604205843" miny="5.371820999999999" maxx="51.85016003936294" maxy="16.360727999999998"/>
+        <BoundingBox CRS="EPSG:28992" minx="153856.2844501733" miny="23038.01567310485" maxx="969682.7685975846" maxy="486149.4231768182"/>
+        <Style>
+          <Name>smartem:meas_no2_color_range</Name>
+          <Title>Smart Emission measurements NO2</Title>
+          <Abstract>Smart Emission measurements_no2 style</Abstract>
+          <LegendURL width="176" height="360">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Alast_measurements_no2"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:last_measurements_no2_raw</Name>
+        <Title>last_measurements_no2_raw</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_last_measurements_no2_raw</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.671661</westBoundLongitude>
+          <eastBoundLongitude>5.87668</eastBoundLongitude>
+          <southBoundLatitude>51.47241</southBoundLatitude>
+          <northBoundLatitude>51.868121</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.671661" miny="51.47241" maxx="5.87668" maxy="51.868121"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.47241" miny="5.671661" maxx="51.868121" maxy="5.87668"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.47241003972536" miny="5.671660999999999" maxx="51.86812103934525" maxy="5.87668"/>
+        <BoundingBox CRS="EPSG:28992" minx="174591.7367623356" miny="387077.7645223617" maxx="189008.18007126046" maxy="431176.86042215285"/>
+        <Style>
+          <Name>smartem:meas_kohm_raw</Name>
+          <Title>Smart Emission Raw Measurements</Title>
+          <Abstract>Smart Emission Raw Measurements Style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Alast_measurements_no2_raw"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:last_measurements_noise_level_avg</Name>
+        <Title>last_measurements_noise_level_avg</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_last_measurements_noise_level_avg</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.318076</westBoundLongitude>
+          <eastBoundLongitude>16.360638</eastBoundLongitude>
+          <southBoundLatitude>48.20108</southBoundLatitude>
+          <northBoundLatitude>51.868075</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.318076" miny="48.20108" maxx="16.360638" maxy="51.868075"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.20108" miny="5.318076" maxx="51.868075" maxy="16.360638"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.20108004205841" miny="5.318076" maxx="51.86807503934529" maxy="16.360638000000005"/>
+        <BoundingBox CRS="EPSG:28992" minx="149856.76173867786" miny="23044.058038808173" maxx="969675.5608939759" maxy="488125.7801400431"/>
+        <Style>
+          <Name>smartem:meas_noise_level_range</Name>
+          <Title>Smart Emission measurements Audio/Noise Level</Title>
+          <Abstract>Smart Emission v_last_measurements_audio_max style</Abstract>
+          <LegendURL width="211" height="120">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Alast_measurements_noise_level_avg"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:last_measurements_o3</Name>
+        <Title>last_measurements_o3</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_last_measurements_o3</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.671661</westBoundLongitude>
+          <eastBoundLongitude>5.87668</eastBoundLongitude>
+          <southBoundLatitude>51.47241</southBoundLatitude>
+          <northBoundLatitude>51.868121</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.671661" miny="51.47241" maxx="5.87668" maxy="51.868121"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.47241" miny="5.671661" maxx="51.868121" maxy="5.87668"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.47241003972536" miny="5.671660999999999" maxx="51.86812103934525" maxy="5.87668"/>
+        <BoundingBox CRS="EPSG:28992" minx="174591.7367623356" miny="387077.7645223617" maxx="189008.18007126046" maxy="431176.86042215285"/>
+        <Style>
+          <Name>smartem:meas_o3_color_range</Name>
+          <Title>Smart Emission measurements O3</Title>
+          <Abstract>Smart Emission measurements_o3 style</Abstract>
+          <LegendURL width="176" height="380">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Alast_measurements_o3"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:last_measurements_o3_raw</Name>
+        <Title>last_measurements_o3_raw</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_last_measurements_o3_raw</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.671661</westBoundLongitude>
+          <eastBoundLongitude>5.87668</eastBoundLongitude>
+          <southBoundLatitude>51.47241</southBoundLatitude>
+          <northBoundLatitude>51.868121</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.671661" miny="51.47241" maxx="5.87668" maxy="51.868121"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.47241" miny="5.671661" maxx="51.868121" maxy="5.87668"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.47241003972536" miny="5.671660999999999" maxx="51.86812103934525" maxy="5.87668"/>
+        <BoundingBox CRS="EPSG:28992" minx="174591.7367623356" miny="387077.7645223617" maxx="189008.18007126046" maxy="431176.86042215285"/>
+        <Style>
+          <Name>smartem:meas_kohm_raw</Name>
+          <Title>Smart Emission Raw Measurements</Title>
+          <Abstract>Smart Emission Raw Measurements Style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Alast_measurements_o3_raw"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:last_measurements_pm10</Name>
+        <Title>last_measurements_pm10</Title>
+        <Abstract>Last hour PM10 average.</Abstract>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_last_measurements_pm10</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>4.83808</westBoundLongitude>
+          <eastBoundLongitude>5.671258</eastBoundLongitude>
+          <southBoundLatitude>51.472586</southBoundLatitude>
+          <northBoundLatitude>52.39608</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="4.83808" miny="51.472586" maxx="5.671258" maxy="52.39608"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.472586" miny="4.83808" maxx="52.39608" maxy="5.671258"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.47258603972519" miny="4.83808" maxx="52.39608003880767" maxy="5.671257999999998"/>
+        <BoundingBox CRS="EPSG:28992" minx="116848.17718432163" miny="387058.7567445277" maxx="174735.79273545116" maxy="489945.6522312726"/>
+        <Style>
+          <Name>smartem:meas_pm10_color_range</Name>
+          <Title>Smart Emission measurements PM10</Title>
+          <Abstract>Smart Emission measurements_pm10 style</Abstract>
+          <LegendURL width="176" height="360">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Alast_measurements_pm10"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:last_measurements_pm25</Name>
+        <Title>last_measurements_pm25</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_last_measurements_pm25</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>4.351513</westBoundLongitude>
+          <eastBoundLongitude>5.409258</eastBoundLongitude>
+          <southBoundLatitude>51.418261</southBoundLatitude>
+          <northBoundLatitude>52.119913</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="4.351513" miny="51.418261" maxx="5.409258" maxy="52.119913"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.418261" miny="4.351513" maxx="52.119913" maxy="5.409258"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.41826103977582" miny="4.351513000000001" maxx="52.11991303909314" maxy="5.409258"/>
+        <BoundingBox CRS="EPSG:28992" minx="82957.84395260873" miny="381015.25460128544" maxx="156534.32082298328" maxy="459583.0379949118"/>
+        <Style>
+          <Name>smartem:meas_pm25_color_range</Name>
+          <Title>Smart Emission measurements PM2.5</Title>
+          <Abstract>Smart Emission measurements_pm2.5 style</Abstract>
+          <LegendURL width="176" height="340">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Alast_measurements_pm25"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:last_measurements_temperature</Name>
+        <Title>last_measurements_temperature</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_last_measurements_temperature</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.671541</westBoundLongitude>
+          <eastBoundLongitude>5.87668</eastBoundLongitude>
+          <southBoundLatitude>51.47241</southBoundLatitude>
+          <northBoundLatitude>51.868121</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.671541" miny="51.47241" maxx="5.87668" maxy="51.868121"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.47241" miny="5.671541" maxx="51.868121" maxy="5.87668"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.47241003972536" miny="5.6715409999999995" maxx="51.86812103934525" maxy="5.87668"/>
+        <BoundingBox CRS="EPSG:28992" minx="174583.47193526162" miny="387077.73197407776" maxx="189008.18007126046" maxy="431176.86042215285"/>
+        <Style>
+          <Name>meteo</Name>
+          <Title>SmarteEmission Meteo Measurements</Title>
+          <Abstract>SmarteEmission Meteo Measurements style</Abstract>
+          <LegendURL width="22" height="60">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Alast_measurements_temperature"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:stations</Name>
+        <Title>stations</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>stations</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.671635</westBoundLongitude>
+          <eastBoundLongitude>11.116727</eastBoundLongitude>
+          <southBoundLatitude>49.418673</southBoundLatitude>
+          <northBoundLatitude>51.868091</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.671635" miny="49.418673" maxx="11.116727" maxy="51.868091"/>
+        <BoundingBox CRS="EPSG:4326" minx="49.418673" miny="5.671635" maxx="51.868091" maxy="11.116727"/>
+        <BoundingBox CRS="EPSG:4258" minx="49.41867304136532" miny="5.671635" maxx="51.868091039345266" maxy="11.116727"/>
+        <BoundingBox CRS="EPSG:28992" minx="174589.95911626663" miny="158589.6024700823" maxx="570636.7082158718" maxy="446613.2328503695"/>
+        <Style>
+          <Name>stations</Name>
+          <Title>SmartEm Stations</Title>
+          <Abstract>SmartEm Stations style</Abstract>
+          <LegendURL width="194" height="40">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Astations"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>stations</Name>
+          <Title>SmartEm Stations</Title>
+          <Abstract>SmartEm Stations style</Abstract>
+          <LegendURL width="194" height="40">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Astations&amp;style=stations"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>stations-active</Name>
+          <Title>SmartEm Stations</Title>
+          <Abstract>SmartEm Stations style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Astations&amp;style=stations-active"/>
+          </LegendURL>
+        </Style>
+        <Style>
+          <Name>stations-inactive</Name>
+          <Title>SmartEm Stations</Title>
+          <Abstract>SmartEm Stations style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Astations&amp;style=stations-inactive"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:timeseries</Name>
+        <Title>timeseries</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>timeseries</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.31266927719116</westBoundLongitude>
+          <eastBoundLongitude>6.19956207275391</eastBoundLongitude>
+          <southBoundLatitude>51.3568687438965</southBoundLatitude>
+          <northBoundLatitude>52.150707244873</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.31266927719116" miny="51.3568687438965" maxx="6.19956207275391" maxy="52.150707244873"/>
+        <BoundingBox CRS="EPSG:4326" minx="51.3568687438965" miny="5.31266927719116" maxx="52.150707244873" maxy="6.19956207275391"/>
+        <BoundingBox CRS="EPSG:4258" minx="51.35686878372908" miny="5.31266927719116" maxx="52.15070728393477" maxy="6.19956207275391"/>
+        <BoundingBox CRS="EPSG:28992" minx="149808.51758281435" miny="374187.6600643521" maxx="211584.2026108764" maxy="462814.59105943755"/>
+        <Style>
+          <Name>poi</Name>
+          <Title>Points of interest</Title>
+          <Abstract>Manhattan points of interest</Abstract>
+          <LegendURL width="22" height="40">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Atimeseries"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:timeseries_barometer</Name>
+        <Title>timeseries_barometer</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_timeseries_barometer</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.317513</westBoundLongitude>
+          <eastBoundLongitude>16.360798</eastBoundLongitude>
+          <southBoundLatitude>48.200991</southBoundLatitude>
+          <northBoundLatitude>52.145583</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.317513" miny="48.200991" maxx="16.360798" maxy="52.145583"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.200991" miny="5.317513" maxx="52.145583" maxy="16.360798"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.20099104205846" miny="5.317513" maxx="52.14558303906701" maxy="16.360797999999996"/>
+        <BoundingBox CRS="EPSG:28992" minx="149814.85592688696" miny="23034.18977691373" maxx="969688.8431264539" maxy="518755.8086629804"/>
+        <Dimension name="time" default="current" units="ISO8601">2016-04-01T20:00:00.000Z/{DIM_END_TIME}/PT1H</Dimension>
+        <Style>
+          <Name>meteo</Name>
+          <Title>SmarteEmission Meteo Measurements</Title>
+          <Abstract>SmarteEmission Meteo Measurements style</Abstract>
+          <LegendURL width="22" height="60">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Atimeseries_barometer"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:timeseries_co</Name>
+        <Title>timeseries_co</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_timeseries_co</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.31706</westBoundLongitude>
+          <eastBoundLongitude>16.360768</eastBoundLongitude>
+          <southBoundLatitude>48.20081</southBoundLatitude>
+          <northBoundLatitude>52.145941</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.31706" miny="48.20081" maxx="16.360768" maxy="52.145941"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.20081" miny="5.31706" maxx="52.145941" maxy="16.360768"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.200810042058535" miny="5.317059999999999" maxx="52.145941039066635" maxy="16.360768"/>
+        <BoundingBox CRS="EPSG:28992" minx="149781.12621461938" miny="23014.073021285003" maxx="969689.5962944189" maxy="518795.00963897264"/>
+        <Dimension name="time" default="current" units="ISO8601">2016-04-01T20:00:00.000Z/{DIM_END_TIME}/PT1H</Dimension>
+        <Style>
+          <Name>smartem:meas_co_plain</Name>
+          <Title>Smart Emission measurements_co</Title>
+          <Abstract>Smart Emission measurements_co style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Atimeseries_co"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:timeseries_co2</Name>
+        <Title>timeseries_co2</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_timeseries_co2</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.317513</westBoundLongitude>
+          <eastBoundLongitude>16.360796</eastBoundLongitude>
+          <southBoundLatitude>48.200991</southBoundLatitude>
+          <northBoundLatitude>52.145583</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.317513" miny="48.200991" maxx="16.360796" maxy="52.145583"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.200991" miny="5.317513" maxx="52.145583" maxy="16.360796"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.20099104205846" miny="5.317513" maxx="52.145583039067" maxy="16.360796"/>
+        <BoundingBox CRS="EPSG:28992" minx="149814.85592688696" miny="23034.18977691373" maxx="969688.695351885" maxy="518755.7879426808"/>
+        <Dimension name="time" default="current" units="ISO8601">2016-04-01T20:00:00.000Z/{DIM_END_TIME}/PT1H</Dimension>
+        <Style>
+          <Name>smartem:meas_co2_color_range</Name>
+          <Title>Smart Emission measurements_co</Title>
+          <Abstract>Smart Emission measurements_co style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Atimeseries_co2"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:timeseries_co_raw</Name>
+        <Title>timeseries_co_raw</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_timeseries_co_raw</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.31706</westBoundLongitude>
+          <eastBoundLongitude>16.360773</eastBoundLongitude>
+          <southBoundLatitude>48.20081</southBoundLatitude>
+          <northBoundLatitude>52.145941</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.31706" miny="48.20081" maxx="16.360773" maxy="52.145941"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.20081" miny="5.31706" maxx="52.145941" maxy="16.360773"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.200810042058535" miny="5.317059999999999" maxx="52.145941039066635" maxy="16.360772999999995"/>
+        <BoundingBox CRS="EPSG:28992" minx="149781.12621461938" miny="23014.073021285003" maxx="969689.9657322118" maxy="518795.06143929256"/>
+        <Dimension name="time" default="current" units="ISO8601">2016-04-01T20:00:00.000Z/{DIM_END_TIME}/PT1H</Dimension>
+        <Style>
+          <Name>smartem:meas_kohm_raw</Name>
+          <Title>Smart Emission Raw Measurements</Title>
+          <Abstract>Smart Emission Raw Measurements Style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Atimeseries_co_raw"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:timeseries_humidity</Name>
+        <Title>timeseries_humidity</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_timeseries_humidity</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.317513</westBoundLongitude>
+          <eastBoundLongitude>16.360798</eastBoundLongitude>
+          <southBoundLatitude>48.20095</southBoundLatitude>
+          <northBoundLatitude>52.145583</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.317513" miny="48.20095" maxx="16.360798" maxy="52.145583"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.20095" miny="5.317513" maxx="52.145583" maxy="16.360798"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.20095004205847" miny="5.317513" maxx="52.14558303906701" maxy="16.360798"/>
+        <BoundingBox CRS="EPSG:28992" minx="149814.85167114815" miny="23029.62579926243" maxx="969689.5158426793" maxy="518755.8086629804"/>
+        <Dimension name="time" default="current" units="ISO8601">2016-04-01T20:00:00.000Z/{DIM_END_TIME}/PT1H</Dimension>
+        <Style>
+          <Name>meteo</Name>
+          <Title>SmarteEmission Meteo Measurements</Title>
+          <Abstract>SmarteEmission Meteo Measurements style</Abstract>
+          <LegendURL width="22" height="60">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Atimeseries_humidity"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:timeseries_no2</Name>
+        <Title>timeseries_no2</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_timeseries_no2</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.31706</westBoundLongitude>
+          <eastBoundLongitude>16.360768</eastBoundLongitude>
+          <southBoundLatitude>48.200828</southBoundLatitude>
+          <northBoundLatitude>52.145941</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.31706" miny="48.200828" maxx="16.360768" maxy="52.145941"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.200828" miny="5.31706" maxx="52.145941" maxy="16.360768"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.200828042058525" miny="5.317059999999999" maxx="52.145941039066635" maxy="16.360768"/>
+        <BoundingBox CRS="EPSG:28992" minx="149781.12809516565" miny="23016.076718916418" maxx="969689.3009566836" maxy="518795.00963897264"/>
+        <Dimension name="time" default="current" units="ISO8601">2016-04-01T20:00:00.000Z/{DIM_END_TIME}/PT1H</Dimension>
+        <Style>
+          <Name>smartem:meas_no2_color_range</Name>
+          <Title>Smart Emission measurements NO2</Title>
+          <Abstract>Smart Emission measurements_no2 style</Abstract>
+          <LegendURL width="176" height="360">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Atimeseries_no2"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:timeseries_no2_raw</Name>
+        <Title>timeseries_no2_raw</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_timeseries_no2_raw</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.31706</westBoundLongitude>
+          <eastBoundLongitude>16.360773</eastBoundLongitude>
+          <southBoundLatitude>48.20081</southBoundLatitude>
+          <northBoundLatitude>52.145941</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.31706" miny="48.20081" maxx="16.360773" maxy="52.145941"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.20081" miny="5.31706" maxx="52.145941" maxy="16.360773"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.200810042058535" miny="5.317059999999999" maxx="52.145941039066635" maxy="16.360772999999995"/>
+        <BoundingBox CRS="EPSG:28992" minx="149781.12621461938" miny="23014.073021285003" maxx="969689.9657322118" maxy="518795.06143929256"/>
+        <Dimension name="time" default="current" units="ISO8601">2016-04-01T20:00:00.000Z/{DIM_END_TIME}/PT1H</Dimension>
+        <Style>
+          <Name>smartem:meas_kohm_raw</Name>
+          <Title>Smart Emission Raw Measurements</Title>
+          <Abstract>Smart Emission Raw Measurements Style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Atimeseries_no2_raw"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:timeseries_noise_level_avg</Name>
+        <Title>timeseries_noise_level_avg</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_timeseries_noise_level_avg</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.317513</westBoundLongitude>
+          <eastBoundLongitude>16.360798</eastBoundLongitude>
+          <southBoundLatitude>48.200991</southBoundLatitude>
+          <northBoundLatitude>52.145583</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.317513" miny="48.200991" maxx="16.360798" maxy="52.145583"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.200991" miny="5.317513" maxx="52.145583" maxy="16.360798"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.20099104205846" miny="5.317513" maxx="52.14558303906701" maxy="16.360797999999996"/>
+        <BoundingBox CRS="EPSG:28992" minx="149814.85592688696" miny="23034.18977691373" maxx="969688.8431264539" maxy="518755.8086629804"/>
+        <Dimension name="time" default="current" units="ISO8601">2016-04-01T20:00:00.000Z/{DIM_END_TIME}/PT1H</Dimension>
+        <Style>
+          <Name>smartem:meas_noise_level_range</Name>
+          <Title>Smart Emission measurements Audio/Noise Level</Title>
+          <Abstract>Smart Emission v_last_measurements_audio_max style</Abstract>
+          <LegendURL width="211" height="120">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Atimeseries_noise_level_avg"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:timeseries_o3</Name>
+        <Title>timeseries_o3</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_timeseries_o3</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.31706</westBoundLongitude>
+          <eastBoundLongitude>16.360768</eastBoundLongitude>
+          <southBoundLatitude>48.20081</southBoundLatitude>
+          <northBoundLatitude>52.145941</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.31706" miny="48.20081" maxx="16.360768" maxy="52.145941"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.20081" miny="5.31706" maxx="52.145941" maxy="16.360768"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.200810042058535" miny="5.317059999999999" maxx="52.145941039066635" maxy="16.360768"/>
+        <BoundingBox CRS="EPSG:28992" minx="149781.12621461938" miny="23014.073021285003" maxx="969689.5962944189" maxy="518795.00963897264"/>
+        <Dimension name="time" default="current" units="ISO8601">2016-04-01T20:00:00.000Z/{DIM_END_TIME}/PT1H</Dimension>
+        <Style>
+          <Name>smartem:meas_o3_color_range</Name>
+          <Title>Smart Emission measurements O3</Title>
+          <Abstract>Smart Emission measurements_o3 style</Abstract>
+          <LegendURL width="176" height="380">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Atimeseries_o3"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:timeseries_o3_raw</Name>
+        <Title>timeseries_o3_raw</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_timeseries_o3_raw</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.31706</westBoundLongitude>
+          <eastBoundLongitude>16.360773</eastBoundLongitude>
+          <southBoundLatitude>48.20081</southBoundLatitude>
+          <northBoundLatitude>52.145941</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.31706" miny="48.20081" maxx="16.360773" maxy="52.145941"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.20081" miny="5.31706" maxx="52.145941" maxy="16.360773"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.200810042058535" miny="5.317059999999999" maxx="52.145941039066635" maxy="16.360772999999995"/>
+        <BoundingBox CRS="EPSG:28992" minx="149781.12621461938" miny="23014.073021285003" maxx="969689.9657322118" maxy="518795.06143929256"/>
+        <Dimension name="time" default="current" units="ISO8601">2016-04-01T20:00:00.000Z/{DIM_END_TIME}/PT1H</Dimension>
+        <Style>
+          <Name>smartem:meas_kohm_raw</Name>
+          <Title>Smart Emission Raw Measurements</Title>
+          <Abstract>Smart Emission Raw Measurements Style</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Atimeseries_o3_raw"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:timeseries_pm10</Name>
+        <Title>timeseries_pm10</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>v_timeseries_pm10</Keyword>
+          <Keyword>features</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-2.048575</westBoundLongitude>
+          <eastBoundLongitude>5.672551</eastBoundLongitude>
+          <southBoundLatitude>-2.048575</southBoundLatitude>
+          <northBoundLatitude>52.39608</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-2.048575" miny="-2.048575" maxx="5.672551" maxy="52.39608"/>
+        <BoundingBox CRS="EPSG:4326" minx="-2.048575" miny="-2.048575" maxx="52.39608" maxy="5.672551"/>
+        <BoundingBox CRS="EPSG:4258" minx="-2.0485750000827085" miny="-2.0485750000000005" maxx="52.39608003880767" maxy="5.672551000000001"/>
+        <BoundingBox CRS="EPSG:28992" minx="-888284.121327988" miny="-6032889.983327136" maxx="195035.22746690115" maxy="515784.0981149205"/>
+        <Dimension name="time" default="current" units="ISO8601">2016-09-30T11:00:00.000Z/{DIM_END_TIME}/PT1H</Dimension>
+        <Style>
+          <Name>smartem:meas_pm10_color_range</Name>
+          <Title>Smart Emission measurements PM10</Title>
+          <Abstract>Smart Emission measurements_pm10 style</Abstract>
+          <LegendURL width="176" height="360">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Atimeseries_pm10"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:timeseries_pm25</Name>
+        <Title>timeseries_pm25</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_timeseries_pm25</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-2.048575</westBoundLongitude>
+          <eastBoundLongitude>5.674223</eastBoundLongitude>
+          <southBoundLatitude>-2.048575</southBoundLatitude>
+          <northBoundLatitude>52.39608</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-2.048575" miny="-2.048575" maxx="5.674223" maxy="52.39608"/>
+        <BoundingBox CRS="EPSG:4326" minx="-2.048575" miny="-2.048575" maxx="52.39608" maxy="5.674223"/>
+        <BoundingBox CRS="EPSG:4258" minx="-2.0485750000827085" miny="-2.0485750000000005" maxx="52.39608003880767" maxy="5.674222999999999"/>
+        <BoundingBox CRS="EPSG:28992" minx="-888284.121327988" miny="-6032889.423859998" maxx="195269.71867873843" maxy="515784.0981149205"/>
+        <Dimension name="time" default="current" units="ISO8601">2016-09-30T11:00:00.000Z/{DIM_END_TIME}/PT1H</Dimension>
+        <Style>
+          <Name>smartem:meas_pm25_color_range</Name>
+          <Title>Smart Emission measurements PM2.5</Title>
+          <Abstract>Smart Emission measurements_pm2.5 style</Abstract>
+          <LegendURL width="176" height="340">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Atimeseries_pm25"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:timeseries_stations</Name>
+        <Title>timeseries_stations</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>stations</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.317931</westBoundLongitude>
+          <eastBoundLongitude>16.36056</eastBoundLongitude>
+          <southBoundLatitude>48.201185</southBoundLatitude>
+          <northBoundLatitude>51.86811</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.317931" miny="48.201185" maxx="16.36056" maxy="51.86811"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.201185" miny="5.317931" maxx="51.86811" maxy="16.36056"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.20118504205836" miny="5.317930999999999" maxx="51.86811003934526" maxy="16.36056"/>
+        <BoundingBox CRS="EPSG:28992" minx="149845.98215779135" miny="23055.756264166266" maxx="969668.0749205153" maxy="488128.8315156301"/>
+        <Style>
+          <Name>poi</Name>
+          <Title>Points of interest</Title>
+          <Abstract>Manhattan points of interest</Abstract>
+          <LegendURL width="22" height="40">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Atimeseries_stations"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>smartem:timeseries_temperature</Name>
+        <Title>timeseries_temperature</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>v_timeseries_temperature</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>5.317513</westBoundLongitude>
+          <eastBoundLongitude>16.360798</eastBoundLongitude>
+          <southBoundLatitude>48.200991</southBoundLatitude>
+          <northBoundLatitude>52.145583</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="5.317513" miny="48.200991" maxx="16.360798" maxy="52.145583"/>
+        <BoundingBox CRS="EPSG:4326" minx="48.200991" miny="5.317513" maxx="52.145583" maxy="16.360798"/>
+        <BoundingBox CRS="EPSG:4258" minx="48.20099104205846" miny="5.317513" maxx="52.14558303906701" maxy="16.360797999999996"/>
+        <BoundingBox CRS="EPSG:28992" minx="149814.85592688696" miny="23034.18977691373" maxx="969688.8431264539" maxy="518755.8086629804"/>
+        <Dimension name="time" default="current" units="ISO8601">2016-04-01T20:00:00.000Z/{DIM_END_TIME}/PT1H</Dimension>
+        <Style>
+          <Name>meteo</Name>
+          <Title>SmarteEmission Meteo Measurements</Title>
+          <Abstract>SmarteEmission Meteo Measurements style</Abstract>
+          <LegendURL width="22" height="60">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://data.smartemission.nl:80/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=smartem%3Atimeseries_temperature"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

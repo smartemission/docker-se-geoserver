@@ -25,6 +25,14 @@ ENV JAVA_OPTS "$JAVA_OPTS $GEOSERVER_OPTS"
 COPY geoserver-data/templates /opt/geoserver/templates
 COPY geoserver-data/data /opt/geoserver/data_dir
 
+# This is needed to intercept WMS GetCapabilities Requests
+ENV TC_WEB_INF "/usr/local/tomcat/webapps/geoserver/WEB-INF"
+COPY wms-capabilities/web.xml $TC_WEB_INF/web.xml
+COPY wms-capabilities/wms-capabilities.xml $TC_WEB_INF/classes
+RUN mkdir -p $TC_WEB_INF/classes/nl/pdok/filter
+COPY wms-capabilities/src/nl/pdok/filter/WmsCapabilitiesFilter.class $TC_WEB_INF/classes/nl/pdok/filter
+
+# Add a custom entry script to intercept and configure
 COPY entry.sh /entry.sh
 RUN chmod +x /entry.sh
 
