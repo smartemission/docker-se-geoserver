@@ -28,7 +28,7 @@ COPY geoserver-data/data /opt/geoserver/data_dir
 # This is needed to intercept WMS GetCapabilities Requests
 ENV TC_WEB_INF "/usr/local/tomcat/webapps/geoserver/WEB-INF"
 COPY wms-capabilities/web.xml $TC_WEB_INF/web.xml
-COPY wms-capabilities/wms-capabilities.xml $TC_WEB_INF/classes
+COPY wms-capabilities/wms-capabilities-*.xml $TC_WEB_INF/classes/
 RUN mkdir -p $TC_WEB_INF/classes/nl/pdok/filter
 COPY wms-capabilities/src/nl/pdok/filter/WmsCapabilitiesFilter.class $TC_WEB_INF/classes/nl/pdok/filter
 
