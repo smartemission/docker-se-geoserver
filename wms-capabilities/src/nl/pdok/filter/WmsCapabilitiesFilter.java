@@ -59,9 +59,27 @@ public class WmsCapabilitiesFilter implements Filter {
             if (owsRequestName != null && owsServiceName != null &&
                     owsServiceName.equalsIgnoreCase("wms") && owsRequestName.equalsIgnoreCase("getcapabilities")) {
 
+                // Caps request: determine version
+                String owsVersion = request.getParameter("version");
+                if (owsVersion == null) {
+                    owsVersion = request.getParameter("VERSION");
+                }
+                if (owsVersion == null) {
+                    owsVersion = request.getParameter("Version");
+                }
+                if (owsVersion == null) {
+                    owsVersion = "1.3.0";
+                }
+
+                // Unless WMS version 1 (1.0.0, 1.1.0 or 1.1.1) is explicitly requested we assume v2 (1.3.0)
+                String capsTemplateFile = "wms-capabilities-v2.xml";
+                if (owsVersion.startsWith("1.0") || owsVersion.startsWith("1.1")) {
+                    capsTemplateFile = "wms-capabilities-v1.xml";
+                }
+
                 try {
                     response.setContentType("application/xml; charset=utf-8");
-                    InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("wms-capabilities.xml");
+                    InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(capsTemplateFile);
                     BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
                     StringBuilder cb = new StringBuilder();
                     try {
@@ -100,4 +118,5 @@ public class WmsCapabilitiesFilter implements Filter {
         // System.out.println("Other OWS request");
         chain.doFilter(request, response);
         return;
+    }
 }
